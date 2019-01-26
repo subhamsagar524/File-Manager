@@ -6,7 +6,7 @@ using namespace std;
 
 int copy();
 int move();
-int rename();
+int re_name();
 int del();
 
 int main()
@@ -33,7 +33,7 @@ int main()
                 move();
                 break;
             case 3:
-                rename();
+                re_name();
                 break;
             case 4:
                 del();
@@ -147,7 +147,7 @@ int move()
     return 0;
 }
 
-int rename()
+int re_name()
 {
     char pre_name[100], post_name[100];
     cout<<"Enter File Path>>> Rename From>>> ";
