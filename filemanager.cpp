@@ -197,7 +197,7 @@ int del()
 int list_all()
 {
     char path[100];
-    cout<<"Enter File Path>>> To Delete>>> ";
+    cout<<"Enter Directory Path>>> To List>>> ";
     cin.ignore();
     cin.getline(path,100);
     DIR *directory = opendir(path);
