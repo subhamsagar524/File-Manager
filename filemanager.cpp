@@ -1,6 +1,8 @@
 #include<fstream>
 #include<iostream>
 #include<cstdio>
+#include<stdio.h>
+#include<dirent.h>
 
 using namespace std;
 
@@ -8,6 +10,7 @@ int copy();
 int move();
 int re_name();
 int del();
+int list_all();
 
 int main()
 {
@@ -22,6 +25,7 @@ int main()
         cout<<"\n 2. Move";
         cout<<"\n 3. Rename";
         cout<<"\n 4. Delete";
+        cout<<"\n 5. List All"
         cout<<"\n\n   >>> ";
         cin>>x;
         switch (x)
@@ -37,6 +41,9 @@ int main()
                 break;
             case 4:
                 del();
+                break;
+            case 5:
+                list_all();
                 break;
             default:
                 cout<<"Invalid Option (Enter the option again)";
@@ -185,4 +192,23 @@ int del()
         cout<<"Error deleting file...\n";
         return 0;
     }
+}
+
+int list_all()
+{
+    char path[100];
+    cout<<"Enter File Path>>> To Delete>>> ";
+    cin.ignore();
+    cin.getline(path,100);
+    DIR *directory = opendir(path);
+    struct dirent *direntStruct;
+    if (directory != NULL) 
+    {
+        while (direntStruct = readdir(directory)) 
+        {
+            printf("File Name: %s\n", direntStruct->d_name);
+        }
+    }
+    closedir(directory);
+    return 0;
 }
