@@ -10,7 +10,7 @@ int rename();
 
 int main()
 {
-    cout<<"File Manager (Copy and Move inside Files  :)";
+    cout<<"File Manager ";
     cout<<"\n__________________________________________________________________";
     int x;
     char y;
@@ -150,8 +150,6 @@ int rename()
     cin.getline(pre_name,100);
     cout<<"Enter File Path>>> Rename To>>> ";
     cin.getline(post_name,100);
-        if (!pre_name)
-            throw 1;
         try
         {
             if (rename(pre_name,post_name))
