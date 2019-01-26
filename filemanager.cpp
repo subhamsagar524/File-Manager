@@ -7,6 +7,7 @@ using namespace std;
 int copy();
 int move();
 int rename();
+int del();
 
 int main()
 {
@@ -20,6 +21,7 @@ int main()
         cout<<"\n 1. Copy";
         cout<<"\n 2. Move";
         cout<<"\n 3. Rename";
+        cout<<"\n 4. Delete";
         cout<<"\n\n   >>> ";
         cin>>x;
         switch (x)
@@ -32,6 +34,9 @@ int main()
                 break;
             case 3:
                 rename();
+                break;
+            case 4:
+                del();
                 break;
             default:
                 cout<<"Invalid Option (Enter the option again)";
@@ -161,4 +166,23 @@ int rename()
             cout<<"Error renaming File...\n";
             return 0;
         }
+}
+
+int del()
+{
+    char path[100];
+    cout<<"Enter File Path>>> To Delete>>> ";
+    cin.ignore();
+    cin.getline(path,100);
+    try
+    {
+        if(remove(path))
+            throw 1;
+        cout<<"Successful...\nFile Deleted...";
+    }
+    catch(int i)
+    {
+        cout<<"Error deleting file...\n";
+        return 0;
+    }
 }
