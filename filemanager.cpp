@@ -25,7 +25,7 @@ int main()
         cout<<"\n 2. Move";
         cout<<"\n 3. Rename";
         cout<<"\n 4. Delete";
-        cout<<"\n 5. List All"
+        cout<<"\n 5. List All";
         cout<<"\n\n   >>> ";
         cin>>x;
         switch (x)
