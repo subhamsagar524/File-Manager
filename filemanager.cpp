@@ -6,8 +6,8 @@
 
 using namespace std;
 
-int copy();
-int move();
+int co_py();
+int mo_ve();
 int re_name();
 int del();
 int list_all();
@@ -31,10 +31,10 @@ int main()
         switch (x)
         {
             case 1:
-                copy();
+                co_py();
                 break;
             case 2:
-                move();
+                mo_ve();
                 break;
             case 3:
                 re_name();
@@ -56,7 +56,7 @@ int main()
     return 0;
 }
 
-int copy()
+int co_py()
 {
     fstream a, b;
     char buffer[100];
@@ -101,7 +101,7 @@ int copy()
     return 0;
 }
 
-int move()
+int mo_ve()
 {
     fstream a,b;
     char p1[100],p2[100],buffer[100];
