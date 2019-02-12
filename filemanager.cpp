@@ -66,7 +66,6 @@ int co_py()
     cin.getline(p1,100);
     cout<<"Enter File Path>>> Copy To>>> ";
     char p2[100];
-    ofstream c(p2);
     cin.getline(p2,100);
     try
     {
@@ -110,7 +109,6 @@ int mo_ve()
     cin.getline(p1,100);
     cout<<"Enter File Path>>> Move To>>> ";
     cin.getline(p2,100);
-    ofstream c(p2);
     try
     {
         a.open(p1,ios::in|ios::binary);
