@@ -11,6 +11,7 @@ int mo_ve();
 int re_name();
 int del();
 int list_all();
+int mrg();
 
 int main()
 {
@@ -26,6 +27,7 @@ int main()
         cout<<"\n 3. Rename";
         cout<<"\n 4. Delete";
         cout<<"\n 5. List All";
+        cout<<"\n 6. Merge/Concade";
         cout<<"\n\n   >>> ";
         cin>>x;
         switch (x)
@@ -45,11 +47,14 @@ int main()
             case 5:
                 list_all();
                 break;
+            case 6:
+                mrg();
+                break;
             default:
                 cout<<"Invalid Option (Enter the option again)";
                 y = 'y';
         }
-        cout<<"\nTry Again (Y/N)>>> ";
+        cout<<"\n\nTry Again (Y/N)>>> ";
         cin>>y;
     } while(y == 'Y' || y == 'y');
 
@@ -209,4 +214,40 @@ int list_all()
     }
     closedir(directory);
     return 0;
+}
+
+int mrg()
+{
+     ifstream a,b;
+     ofstream fout;
+     char buffer, p1[100], p2[100], p3[100];
+     cout<<"Enter File Path>>> First File to Merge>>> ";
+     cin.ignore();
+     cin.getline(p1,100);
+     cout<<"Enter File Path>>> Second File to Merge>>> ";
+     cin.getline(p2,100);
+     cout<<"Enter File Path>>> Rename File to store The Merged File>>> ";
+     cin.getline(p3,100);
+     a.open(p1);
+     b.open(p2);
+     if(!a || !b)
+          cout<<"\n Invalid File Name. \n There is no such File or Directory ...";
+     fout.open(p3);
+     if(!fout)
+          cout<<"\n Invalid File Name. \n There is no such File or Directory ...";
+     while(a.eof()==0)
+     {
+          a>>buffer;
+          fout<<buffer;
+     }
+     while(b.eof()==0)
+     {
+          b>>buffer;
+          fout<<buffer;
+     }
+     cout<<"File Merged Successfully...";
+     a.close();
+     b.close();
+     fout.close();
+     return 0;
 }
