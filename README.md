@@ -16,5 +16,3 @@ Usagae
 The program is provided with command line user interface.
 Whenever it ask for the path, provide a proper appropriate full file path (with the file name) for the operations.
 ########################################################################################### 
-
-Thanks for using this..
