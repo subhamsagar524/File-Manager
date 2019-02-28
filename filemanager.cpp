@@ -1,4 +1,3 @@
-#include<conio.h>
 #include<fstream>
 #include<iostream>
 #include<cstdio>
