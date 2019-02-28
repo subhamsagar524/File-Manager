@@ -1,7 +1,7 @@
 # File-Manager
 A File Manager to Copy, Move, Rename, Delete, List Files and Merge files.
 
-#########################################################################################################################
+###########################################################################################
 How to run
   The program is completely written in C++.
   Compile and run the code in any C++ compiler.
