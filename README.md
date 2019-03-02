@@ -1,5 +1,10 @@
 # File-Manager
-A File Manager to Copy, Move, Rename, Delete, List Files and Merge files.
+- Copy
+- Move
+- Rename
+- Delete
+- List Files 
+- Merge files.
 
 ## How to run
 
